@@ -2,8 +2,9 @@ import nodemailer from "nodemailer";
 
 export const sendVerificationEmail = async (email: string, token: string) => {
     const transporter = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
-        port: 2525,
+        service:"gmail",
+        host: "smtp.gmail.com",
+        port: 587,
         auth: {
             user: process.env.NODEMAILER_USER,
             pass: process.env.NODEMAILER_PASS

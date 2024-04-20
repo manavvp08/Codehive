@@ -37,6 +37,7 @@ export const signUp = async (payload: SignupPayload) => {
 
         return { success: "Verfication email sent", tokenId: verificationToken.id };
     } catch (error) {
+        console.error("Error during sign-up:", error);
         return { error: "Something went wrong" };
     }
 };
